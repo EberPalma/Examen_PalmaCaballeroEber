@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix'=>'api'],function(){
+    Route::Resource('cliente',cliente::class);
+    Route::Resource('factura',factura::class);
+    Route::Resource('detalle_factura',detalle_factura::class);
+    Route::Resource('producto',producto::class);
+});
